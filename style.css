@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* 
+    notes: m0, ... m9 -> margin: 0px ... margin: 9px
+    notes: p0, ... p9 -> padding: 0px ... padding: 9px
+    */
+}
+
+body {
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+}
+
+span {
+    background: url('https://cdn4.iconfinder.com/data/icons/general-office/91/General_Office_54-256.png');
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    pointer-events: none;
+    /* pointer-events: none will make sure that event 
+    will be listened 1 time instead of 2 */
+    background-size: cover;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* above 3 lines required for heart exactly in middle */
+
+    animation: animate 6s linear;
+}
+
+/* notes: go to https://www.iconfinder.com and search for heart */
+
+/* *animation in span */
+@keyframes animate {
+    0% {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+        /* no opacity */
+        filter: hue-rotate(0);
+    }
+
+    100% {
+        transform: translate(-50%, -5000%);
+        /* heart will go that direction of upside b/c 
+        of -5000 */
+        opacity: 0;
+        filter: hue-rotate(720deg);
+    }
+}
